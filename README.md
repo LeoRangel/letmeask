@@ -107,6 +107,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### Aula 01
 
 #### (Criar projeto React)
+> O create react-app é uma biblioteca que ajuda a iniciar um projeto com React
 ```bash
 yarn create react-app letmeask --template typescript
 ```
@@ -186,7 +187,7 @@ export default App;
 > Como são chamados os HTML usados dentro de Javascrip e Typescript, respectivamente
 
 #### (Componentes)
-> São pedaços de código separados escritos em forma de functions que retornam algum html
+> São pedaços de código separados escritos em forma de functions que retornam algum html. Os componentes sempre tem a primeira letra maiúscula, para não confundir com as tags html
 
 #### (Propriedades)
 > São informações (string, número, array, etc) que pode-se passar para um componente (tal qual os atributos do html). No Typescript é necessário declarar as propriedades no arquivo do componente
@@ -322,6 +323,25 @@ REACT_APP_APP_ID=""
 import './services/firebase';
 ```
 
+<br />
+</details>
+
+
+
+<details>
+<summary>Aula 02</summary>
+<br />
+
+### Aula 02
+
+#### (Criar pasta "src/pages")
+> Para guardar as páginas da aplicação
+
+#### (Criar pasta "src/assets/images")
+> Para guardar as imagens da aplicação
+
+#### (Criar pasta "src/styles")
+> Para guardar os estilos (css ou scss) da aplicação
 
 
 <br />
