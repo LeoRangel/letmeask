@@ -95,11 +95,16 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 
 
+
+
+
 ## Algumas coisas vistas durante a NLW
 
 <details>
 <summary>Aula 01</summary>
 <br />
+
+### Aula 01
 
 #### (Criar projeto React)
 ```bash
@@ -171,6 +176,9 @@ export default App;
 #### (Criar pasta "src/components")
 > Para guardar os componentes
 
+#### (Criar pasta "src/services")
+> Para guardar arquivos de serviços externos
+
 #### (Conceito SPA)
 > Single Page Aplication
 
@@ -234,8 +242,86 @@ export function Button(props: ButtonProps){
 const [counter, setCounter] = useState[0];
 ````
 
-#### Closures
+#### (Closures)
 > Saber sobre: https://nitsancohen770.medium.com/you-have-to-know-closures-to-be-a-good-react-developer-104fc2f6cd70
+
+
+
+
+#### (Firebase)
+> O firebase é uma plataforma BASS (Backend As A Service)
+> Link para o site: https://firebase.google.com/
+
+#### (Criar conta e novo projeto no Firebase)
+> Para usar com a aplicação
+
+#### (Ativar a autenticação com o Google do Firebase)
+> Isso é feito pelo painel do projeto no site do Firebase
+
+#### (Criar novo banco de dados real time do Firebase)
+> Isso é feito pelo painel do projeto no site do Firebase
+>
+> No cadastro, iniciar o banco no modo bloqueado
+
+#### (Adicionar a aplicação ao projeto do Firebase)
+> Isso é feito a partir da página inicial do painel do projeto no site do Firebase
+>
+> Escolher a opção WEB
+
+#### (Importar Firebase)
+```bash
+yarn add firebase
+```
+
+#### (Criar arquivo "firebase.ts" na pasta "src/services")
+> Adicionar o código de configuração para integrar o Firebase
+
+#### (Código do arquivo "firebase.ts")
+```javascript
+import firebase from 'firebase/app';
+
+// Importando os serviços utilizados
+import 'firebase/auth';
+import 'firebase/database';
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASE_URL,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const database = firebase.database();
+
+export { firebase, auth, database }
+```
+
+#### (Criar arquivo ".env.local")
+> Arquivo usado para definir variáveis de ambiente (não é enviado para o github)
+
+#### (Váriaveis da integração com o Firebase)
+> Copiar os valores das variáveis nas "Configuração do SDK" da aplicação no Firebase
+REACT_APP_API_KEY=""
+REACT_APP_AUTH_DOMAIN=""
+REACT_APP_DATABASE_URL=""
+REACT_APP_PROJECT_ID=""
+REACT_APP_STORAGE_BUCKET=""
+REACT_APP_MESSAGING_SENDER_ID=""
+REACT_APP_APP_ID=""
+
+#### (Importar arquivo "firebase.ts" em "index.tsx")
+```javascript
+import './services/firebase';
+```
+
 
 
 <br />
