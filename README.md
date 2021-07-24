@@ -380,6 +380,69 @@ import '../styles/button.scss';
 <div id=""></div>
 ```
 
+#### Hooks
+Funções que começam com 'use' e são usadas apenas dentro do escopo do componente
+
+#### (DICA: Quando da erro ao instalar biblioteca que não aceita TypeScript)
+> Instalar um pacote de terceito que inclui a definição de tipos desse pacote, para usar com typescript
+```bash
+yarn add @types/nome-da-biblioteca -D
+```
+
+#### (Biblioteca React Router DOM)
+> Biblioteca para fazer o roteamento de páginas
+>
+>Instalar o React Router DOM:
+```bash
+yarn add react-router-dom
+```
+> A biblioteca não suporta TypeScript então é necessário instalar também o pacote:
+```bash
+yarn add @types/react-router-dom -D
+```
+
+#### (Ex.: Adicionar Rotas)
+> (OBS: o exact informa que é a rota exata)
+```javascript
+<Route path="/" exact component={Home} />
+<Route path="/rooms/new" component={NewRoom} />
+```
+
+#### (Ex.: Arquivo App.tsx com sistema de Rotas implementado)
+```javascript
+import { BrowserRouter, Route } from 'react-router-dom'
+
+import { Home } from "./pages/Home";
+import { NewRoom } from "./pages/NewRoom";
+
+function App() {
+  return (
+    <BrowserRouter>
+        <Route path="/" exact component={Home} />
+        <Route path="/rooms/new" component={NewRoom} />
+    </BrowserRouter>
+  );
+}
+
+export default App;
+```
+
+#### (Navegar para uma página/rota)
+> Usando o Hook useHistory (exemplo):
+```javascript
+history.push('/rooms/new');
+```
+> Usando Link (exemplo):
+```javascript
+<Link to="/">clique aqui</Link>
+```
+
+#### (Ex.: Chamar função em elemento Html)
+> A função handleCreateRoom:
+```javascript
+<button onClick={handleCreateRoom} className="create-room"></button>
+```
+
 
 <br />
 </details>
