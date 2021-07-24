@@ -101,26 +101,26 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 <summary>Aula 01</summary>
 <br />
 
-### (Criar projeto React)
+#### (Criar projeto React)
 ```bash
 yarn create react-app letmeask --template typescript
 ```
 
-### (Compilar aplicação e exibir no navegador)
+#### (Compilar aplicação e exibir no navegador)
 ```bash
 yarn start
 ```
 
-### (Remover arquivos desnecessários da instalação)
+#### (Remover arquivos desnecessários da instalação)
 > Na pasta "public" deixar só o "index.html" e na pasta "src" deixar só o "App.tsx"; "Index.tsx" e "react-app-env-d.ts"
 
-### (Arquivo "packaje.json")
+#### (Arquivo "packaje.json")
 > Armazena as dependências
 
-### (Pasta "nodemodules")
+#### (Pasta "nodemodules")
 > Onde são armazenadas todas as dependências
 
-### (Arquivo "index.tsx")
+#### (Arquivo "index.tsx")
 > Primeiro arquivo javascript executado que importa o "react" e o "react-dom" (react para desenvolvimento web) e que coloca o código JSX dentro do "index.html"
 
 #### (Arquivo "index.tsx" inicial)
@@ -136,7 +136,7 @@ ReactDOM.render(
 );
 ```
 
-### (Arquivo "index.html")
+#### (Arquivo "index.html")
 > Único arquivo html que será aberto no site. Todo a aplicação vai ser aberta nesse arquivo usando javascript
 
 #### (Arquivo "index.html" inicial)
@@ -155,7 +155,7 @@ ReactDOM.render(
 </html>
 ```
 
-### (Arquivo "App.tsx")
+#### (Arquivo "App.tsx")
 > Componente
 
 #### (Arquivo "App.tsx" inicial)
@@ -168,22 +168,22 @@ function App() {
 export default App;
 ```
 
-### (Criar pasta "src/components")
+#### (Criar pasta "src/components")
 > Para guardar os componentes
 
-### (Conceito SPA)
+#### (Conceito SPA)
 > Single Page Aplication
 
-### (JSX e TSX)
+#### (JSX e TSX)
 > Como são chamados os HTML usados dentro de Javascrip e Typescript, respectivamente
 
-### (Componentes)
+#### (Componentes)
 > São pedaços de código separados escritos em forma de functions que retornam algum html
 
 #### (Propriedades)
 > São informações (string, número, array, etc) que pode-se passar para um componente (tal qual os atributos do html). No Typescript é necessário declarar as propriedades no arquivo do componente
 
-##### (Passando propriedade para o componente)
+#### (Passando propriedade para o componente)
 > Como é passada para um componente
 ````javascript
 <Componente props="texto" />
@@ -196,7 +196,7 @@ type ButtonProps = {
 }
 ````
 
-##### (Propriedade children)
+#### (Propriedade children)
 > Para pegar o valor usado entre as tags de abrir e fechar o componente usa-se a propriedade children. Ex.:
 ````javascript
 <Componente>Valor entre as tags</Componente>
@@ -228,13 +228,13 @@ export function Button(props: ButtonProps){
 #### (Estado)
 > Informação mantida por um componente, cujo valor pode ser mudado pelo usuário. Uma variável criada dentro de estado não sofre alterações, se pode setar um novo valor/informação baseado no que existia anteriormente (Conceito de imutabilidade).
 
-##### (Ex.: Declarando um estado)
+#### (Ex.: Declarando um estado)
 > o useState retorna um valor e uma função, respectivamente. Por isso declara-se duas variaveis (counter e setCounter). A função (recebida por setCounter) serve para alterar o valor (recebida por counter)
 ````javascript
 const [counter, setCounter] = useState[0];
 ````
 
-##### Closures
+#### Closures
 > Saber sobre: https://nitsancohen770.medium.com/you-have-to-know-closures-to-be-a-good-react-developer-104fc2f6cd70
 
 
