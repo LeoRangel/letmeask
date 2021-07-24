@@ -1,6 +1,10 @@
+// Importando páginas
+import { Home } from "./pages/Home";
+import { NewRoom } from "./pages/NewRoom";
+
 function App() {
   return (
-    <h1>Hello World!</h1>
+    <Home />
   );
 }
 

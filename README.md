@@ -343,6 +343,43 @@ import './services/firebase';
 #### (Criar pasta "src/styles")
 > Para guardar os estilos (css ou scss) da aplicação
 
+#### (Criar arquivo de estilos "global.sccs")
+> Para colocar os estilos globais do site
+>
+> Importar no arquivo "src/index.tsx"
+
+#### (importar Imagem)
+```javascript
+import logoImg from '../assets/images/logo.svg';
+```
+> Usar imagem importada:
+```javascript
+<img src={logoImg} alt="Logo do site" />
+```
+
+#### (Instalar a biblioteca SASS)
+> Sass é um pré-processador de css
+>
+> (OBS: versão 6 ainda não é suportada pelo create react-app em 07/2021)
+```bash
+yarn add node-sass@^5.0.0
+```
+
+#### (Importar CSS)
+```javascript
+import '../styles/button.scss';
+```
+
+#### (Classes)
+```javascript
+<div className=""></div>
+```
+
+#### (Id's)
+```javascript
+<div id=""></div>
+```
+
 
 <br />
 </details>
