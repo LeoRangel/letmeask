@@ -236,6 +236,8 @@ export function Button(props: ButtonProps){
 
 #### (Estado)
 > Informação mantida por um componente, cujo valor pode ser mudado pelo usuário. Uma variável criada dentro de estado não sofre alterações, se pode setar um novo valor/informação baseado no que existia anteriormente (Conceito de imutabilidade).
+>
+> Uma informação mantida por um estado dura apenas enquanto o usuários está usando a aplicação (se usar o comando F5, por exemplo, essa informação é apagada). É necessário usar outros meios para recuperar a informação caso ele saia do app.
 
 #### (Ex.: Declarando um estado)
 > o useState retorna um valor e uma função, respectivamente. Por isso declara-se duas variaveis (counter e setCounter). A função (recebida por setCounter) serve para alterar o valor (recebida por counter)
@@ -380,8 +382,8 @@ import '../styles/button.scss';
 <div id=""></div>
 ```
 
-#### Hooks
-Funções que começam com 'use' e são usadas apenas dentro do escopo do componente
+#### (Hooks)
+> Funções que começam com 'use' e são usadas apenas dentro do escopo do componente. Eles permitem que você use o state e outros recursos do React sem escrever uma classe
 
 #### (DICA: Quando da erro ao instalar biblioteca que não aceita TypeScript)
 > Instalar um pacote de terceito que inclui a definição de tipos desse pacote, para usar com typescript
@@ -442,6 +444,59 @@ history.push('/rooms/new');
 ```javascript
 <button onClick={handleCreateRoom} className="create-room"></button>
 ```
+
+#### (Criar pasta "src/contexts")
+> Para guardar os contextos da aplicação
+
+#### (Criar pasta "src/hooks")
+> Para guardar os hooks da aplicação
+
+#### (Contextos)
+Forma de compartilhar informações entre componentes da aplicação, ex.: dados de um usuário logado/autenticado
+
+#### (Ex.: Criar contexto)
+```javascript
+import { createContext } from "react";
+// Contexto que recebe uma string
+export const AuthContext = createContext('')
+```
+
+#### (Ex.: Usar contexto)
+```javascript
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext'
+
+const value = useContext(AuthContext)
+```
+
+#### (Autenticação simples com Firebase)
+```javascript
+import { auth, firebase } from "../services/firebase";
+
+const provider = new firebase.auth.GoogleAuthProvider();
+// Abre o pop up de login com google
+auth.signInWithPopup(provider);
+```
+
+#### (useEffect)
+> Hook usado para disparo de efeitos colaterais (funcionalidades)
+>
+> Ex.: executar função sempre que algo acontecer
+
+#### (Ex.: usar useEffect)
+> O useEffect recebe dois paramentros, o primeiro é o que diz o que vai acontecer, que é uma função, e o segundo é o que diz quando vai acontecer, que é um array com a informação que será monitorada
+>
+> Se a função vai ser executada somente uma vez, usa-se apenas o array [] vazio no segundo parametro
+```javascript
+useEffect(() => {}, [])
+```
+
+#### (Autenticação final do app com Firebase)
+> Arquivo "src/contexts/AuthContext.tsx": contexto de autenticação que encapsula todas as informações referentes a autenticação de usuário. Faz login com o google, salva os dados do usuário no estado, etc.
+>
+> No arquivo "src/App.tsx": é importado e usado o provider AuthContextProvider do arquivo "AuthContext.tsx". As rotas/páginas são pasadas como componentes children desse provider, assim, pode-se ter acesso as informações do contexto nos arquivos dessas rotas/páginas
+>
+> Arquivo "src/hooks/useAuth.ts": hook de autenticação que pega e retorna os dados do contexto no arquivo "AuthContext.tsx" e é importado nos arquivos das rotas/páginas para recuperar informações do contexto de autenticação
 
 
 <br />
