@@ -22,10 +22,12 @@ export function NewRoom() {
   const history = useHistory()
   const [newRoom, setNewRoom] = useState('');
 
+  // Função de criar nova sala
   async function handleCreateRoom(event: FormEvent) {
     // Previne de o formulário de redirecionar a página ao submeter o form
     event.preventDefault();
 
+    // Se valor do imput é vazio não faz nada
     if (newRoom.trim() === '') {
       return;
     }
