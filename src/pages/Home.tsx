@@ -19,7 +19,7 @@ export function Home() {
 
     const { user, signInWithGoogle } = useAuth()
 
-    // // Leva usuário para a tela de "new room", se este estiver autenticado
+    // Leva usuário para a tela de "new room", se este estiver autenticado
     async function handleCreateRoom() {
         if (!user) {
             await signInWithGoogle()

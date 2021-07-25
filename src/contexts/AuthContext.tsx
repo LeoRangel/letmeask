@@ -9,6 +9,8 @@ type User = {
 }
 type AuthContextType = {
   user: User | undefined;
+  // Função asincrona retorna Promise
+  // Função que não tem retorno <void>
   signInWithGoogle: () => Promise<void>;
 }
 type AuthContextProviderProps = {
@@ -23,9 +25,9 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
 
   // O useEffect irá executar a função somente uma vez ao iniciar o app
   // Recupera o estado do usuário no app se ele sai ou desloga (pois o estado só fica salvo enquanto ele está no app)
-  // onAuthStateChanged é um envento que monitora e detecta se o usuário já tinha feito login anteriormente
   useEffect(() => {
 
+    // onAuthStateChanged é um envent listening que monitora e detecta se o usuário já tinha feito login anteriormente
     const unsubscribe = auth.onAuthStateChanged(user => {
 
       // Verifica se o usuário tem informações
@@ -46,6 +48,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
       }
     })
 
+    // Sempre que há um event listening precisa retornar uma função que descadastra-se dele no fim do useEffect
     return () => {
       unsubscribe();
     }

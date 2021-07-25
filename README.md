@@ -452,7 +452,15 @@ history.push('/rooms/new');
 > Para guardar os hooks da aplicação
 
 #### (Contextos)
-Forma de compartilhar informações entre componentes da aplicação, ex.: dados de um usuário logado/autenticado
+> Forma de compartilhar informações entre componentes da aplicação, ex.: dados de um usuário logado/autenticado. O contexto pode ser acessado pelos elementos children do provider desse contexto
+>
+> No exemplo abaixo, os elementos Route tem acesso as propriedades user e signInWithGoogle do AuthContext.Provider
+```javascript
+<AuthContext.Provider value={{ user, signInWithGoogle }}>
+  <Route path="/" exact component={Home} />
+  <Route path="/rooms/new" exact component={NewRoom} />
+</AuthContext.Provider>
+```
 
 #### (Ex.: Criar contexto)
 ```javascript
