@@ -408,6 +408,7 @@ yarn add @types/react-router-dom -D
 ```javascript
 <Route path="/" exact component={Home} />
 <Route path="/rooms/new" component={NewRoom} />
+<Route path="/rooms/:id" component={Room} />
 ```
 
 #### (Ex.: Arquivo App.tsx com sistema de Rotas implementado)
@@ -505,6 +506,38 @@ useEffect(() => {}, [])
 > No arquivo "src/App.tsx": é importado e usado o provider AuthContextProvider do arquivo "AuthContext.tsx". As rotas/páginas são pasadas como componentes children desse provider, assim, pode-se ter acesso as informações do contexto nos arquivos dessas rotas/páginas
 >
 > Arquivo "src/hooks/useAuth.ts": hook de autenticação que pega e retorna os dados do contexto no arquivo "AuthContext.tsx" e é importado nos arquivos das rotas/páginas para recuperar informações do contexto de autenticação
+
+
+<br />
+</details>
+
+
+
+<details>
+<summary>Aula 03</summary>
+<br />
+
+### Aula 03
+
+#### (Previnir formulário de redirecionar)
+> Se usa a função event.preventDefault() para previnir o comportamento padrão do navegador, de redirecionar para página ao submeter o formulário:
+```javascript
+import { FormEvent } from 'react'
+
+async function handleCreateRoom(event: FormEvent) {
+  event.preventDefault()
+}
+```
+
+#### (Componente Switch do react)
+> Impede de mais de uma rota serem acessadas ao mesmo tempo. Ex.:
+```javascript
+<Switch>
+  <Route path="/" exact component={Home} />
+  <Route path="/rooms/new" component={NewRoom} />
+  <Route path="/rooms/:id" component={Room} />
+</Switch>
+```
 
 
 <br />
