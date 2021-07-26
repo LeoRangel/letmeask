@@ -539,6 +539,40 @@ async function handleCreateRoom(event: FormEvent) {
 </Switch>
 ```
 
+#### (Regras/Rules para adicionar no banco de dados do app no Firebase)
+```
+{
+  "rules": {
+    "rooms": {
+      ".read": false,
+      ".write": "auth != null",
+      "$roomId": {
+        ".read": true,
+        ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
+        "questions": {
+          ".read": true,
+	        ".write": "auth != null && (!data.exists() || data.parent().child('authorId').val() == auth.id)",
+        	"likes": {
+            ".read": true,
+            ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+#### (Ex.: Obtém parametros passado na rota)
+```javascript
+import { useParams } from 'react-router-dom'
+
+type RoomParams = {
+  id: string;
+}
+
+const params = useParams<RoomParams>();
+```
 
 <br />
 </details>
