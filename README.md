@@ -575,13 +575,16 @@ const params = useParams<RoomParams>();
 ```
 
 #### (IF)
-> No React utiliza-se o IF ternário. Ex.:
+> No React utiliza-se o IF ternário. Ex's.:
 ```javascript
 { user ? (
   <span>Mostrar uma coisa</span>
 ) : (
   <span>Mostrar outra coisa</span>
 ) }
+```
+```javascript
+{ user && <span>Mostrar uma coisa</span> }
 ```
 
 <br />
