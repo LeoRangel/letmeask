@@ -25,6 +25,7 @@ export function Question({
           <span>{author.name}</span>
         </div>
         <div>
+          {/* Aqui serão passados os botões de interação */}
           {children}
         </div>
       </footer>
