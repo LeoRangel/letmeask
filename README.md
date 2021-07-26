@@ -7,7 +7,7 @@
 >
 > (Desenvolvido durante a Next Level Week Together da Rocketseat)
 >
-> Para ver o projeto em execução acesse a [**DEMO**](letmeask-rho.vercel.app)
+> Para ver o projeto em execução acesse a [**DEMO**](https://letmeask-rho.vercel.app/)
 
 
 ## Versioning/Versionamento

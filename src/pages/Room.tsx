@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 // Obtém parametros passado na rota
 import { useParams } from 'react-router-dom'
 
@@ -9,31 +9,12 @@ import { RoomCode } from '../components/RoomCode';
 import { Question } from '../components/Question';
 
 import { useAuth } from '../hooks/useAuth';
+import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
 import '../styles/room.scss';
 
-// Definindo a tipagem dos dados de questões retornados pela api do Firebase
-type FirebaseQuestions = Record<string, {
-  author: {
-    name: string;
-    avatar: string;
-  }
-  content: string;
-  isAnswered: boolean;
-  isHighlighted: boolean;
-}>
-// Tipagem do estado de questões
-type Question = {
-  id: string;
-  author: {
-    name: string;
-    avatar: string;
-  }
-  content: string;
-  isAnswered: boolean;
-  isHighlighted: boolean;
-}
+
 type RoomParams = {
   id: string;
 }
@@ -43,36 +24,10 @@ export function Room() {
   // Obtém parametro de ID da sala passado na rota
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState('');
-  const [questions, setQuestions] = useState<Question[]>([])
-  const [title, setTitle] = useState('');
-
   const roomId = params.id;
 
-  // Monitora valor de roomId que quando é alterado (= a mudar de sala) executa as instruções novamente
-  useEffect(() => {
-    const roomRef = database.ref(`rooms/${roomId}`);
-
-    roomRef.on('value', room => {
-      // Pegando os valores de room via api do Firebase
-      const databaseRoom = room.val();
-      // Salvando os valores das questões retornado como objeto pela api do Firebase
-      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
-
-      // Transformando as questões do formato objeto para array com Object.entries() e retornando todos os valores para a variável
-      const parsedQuestions = Object.entries(firebaseQuestions).map(([key, value]) => {
-        return {
-          id: key,
-          content: value.content,
-          author: value.author,
-          isHighlighted: value.isHighlighted,
-          isAnswered: value.isAnswered,
-        }
-      })
-
-      setTitle(databaseRoom.title);
-      setQuestions(parsedQuestions);
-    })
-  }, [roomId]);
+  // Pegando o titulo e as questões da sala por meio do hook useRoom
+  const { title, questions } = useRoom(roomId)
 
   // Função que salva questão no BD
   async function handleSendQuestion(event: FormEvent) {
@@ -103,7 +58,6 @@ export function Room() {
 
     setNewQuestion('');
   }
-
 
   return (
     <div id="page-room">
