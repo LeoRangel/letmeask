@@ -40,10 +40,18 @@ export function Home() {
             return;
         }
 
-        // Pega os dados da sala informada no servidor e verifica se essa sala existe para redirecionar
+        // Pega os dados da sala informada no servidor
         const roomRef = await database.ref(`rooms/${roomCode}`).get();
+
+        // verifica se a sala existe
         if (!roomRef.exists()) {
-            alert('Room does not exists.');
+            alert('Sala não existe.');
+            return;
+        }
+
+        // Verifica se a sala está encerrada
+        if (roomRef.val().endedAt) {
+            alert('Sala encerrada.');
             return;
         }
 
