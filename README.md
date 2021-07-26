@@ -6,6 +6,8 @@
 > :speech_balloon: Projeto de App web de gerenciamento de perguntas utilizando React e a plataforma Firebase
 >
 > (Desenvolvido durante a Next Level Week Together da Rocketseat)
+>
+> Para ver o projeto em execução acesse a [**DEMO**](letmeask-rho.vercel.app)
 
 
 ## Versioning/Versionamento
@@ -190,7 +192,28 @@ export default App;
 > São pedaços de código separados escritos em forma de functions que retornam algum html. Os componentes sempre tem a primeira letra maiúscula, para não confundir com as tags html
 
 #### (Propriedades)
-> São informações (string, número, array, etc) que pode-se passar para um componente (tal qual os atributos do html). No Typescript é necessário declarar as propriedades no arquivo do componente
+> São informações (string, número, array, etc) que pode-se passar para um componente (tal qual os atributos do html). No Typescript é necessário declarar a tipagem das propriedades no arquivo do componente.
+>
+> Ex.: Declarando a tipagem
+````javascript
+type RoomCodeProps = {
+  code: string;
+}
+````
+> Ex.: Usando a tipagem nas propriedades da função
+````javascript
+export function RoomCode(props: RoomCodeProps) {
+  ...
+}
+````
+> Também pode-se utilizar a forma desestruturada, informando os dados da propriedade
+````javascript
+export function RoomCode({code}: RoomCodeProps) {
+  ...
+}
+````
+
+export function RoomCode(props: RoomCodeProps) {
 
 #### (Passando propriedade para o componente)
 > Como é passada para um componente
@@ -586,6 +609,37 @@ const params = useParams<RoomParams>();
 ```javascript
 { user && <span>Mostrar uma coisa</span> }
 ```
+
+#### (Object.entries())
+> Transforma um bjeto em array
+
+
+<br />
+</details>
+
+
+
+<details>
+<summary>Aula 04</summary>
+<br />
+
+### Aula 04
+
+#### (Key no React)
+> Sempre que se faz uma listagem (Ex.: percorrer um array com map) é necessário definir uma propriedade key para cada objeto da lista. Ex.:
+```javascript
+{questions.map(question => {
+  return (
+    <Question
+      key={question.id}
+      content={question.content}
+      author={question.author}
+    />
+  );
+})}
+```
+
+#### 
 
 <br />
 </details>
