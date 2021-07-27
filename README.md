@@ -677,6 +677,23 @@ const params = useParams<RoomParams>();
 
 ### Aula 05 
 
+#### (Pacote classnames)
+> Serve para passar classes para um elemento de forma mais agradável
+```bash
+yarn add classnames
+```
+
+#### (Fragmento/Fragment no React)
+> Elemento que não é mostrado na renderização da aplicação, serve pra envolver elementos em um return, por exemplo, quando não se pode retornar mais de um elemento isolado. A sintaxe é: <></>
+```javascript
+{!question.isAnswered && (
+  <>
+    <button />
+    <button />
+  </>
+)}
+```
+
 #### ()
 
 <br />
