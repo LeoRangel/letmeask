@@ -213,7 +213,33 @@ export function RoomCode({code}: RoomCodeProps) {
 }
 ````
 
-export function RoomCode(props: RoomCodeProps) {
+#### (Formas de tipagem no Typescript)
+> Para o exemplo de um objeto que tem três propriedades em que a chave (key) é uma string e o valor é um número:
+````javascript
+const obj = {
+  prop1 = 1,
+  prop2 = 2,
+  prop3 = 3,
+}
+````
+> As formas para declarar a tipagem desse objeto são:
+````javascript
+type objType = Record<string, number>;
+````
+> ou
+````javascript
+type objType = {
+  [key: string] : number;
+}
+````
+> ou (se conhecer as chaves do objeto)
+````javascript
+type objType = {
+  prop1 = number,
+  prop2 = number,
+  prop3 = number,
+}
+````
 
 #### (Passando propriedade para o componente)
 > Como é passada para um componente
@@ -639,7 +665,19 @@ const params = useParams<RoomParams>();
 })}
 ```
 
-#### 
+
+<br />
+</details>
+
+
+
+<details>
+<summary>Aula 05</summary>
+<br />
+
+### Aula 05 
+
+#### ()
 
 <br />
 </details>
