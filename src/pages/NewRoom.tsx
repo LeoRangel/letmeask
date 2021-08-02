@@ -46,7 +46,9 @@ export function NewRoom() {
   return (
     <div id="page-auth">
       <aside>
-        <strong>Toda pergunta tem uma resposta.</strong>
+        <h1>
+          <strong>Toda pergunta tem uma resposta.</strong>
+        </h1>
         <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
       </aside>
       <main>

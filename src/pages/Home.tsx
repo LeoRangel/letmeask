@@ -60,7 +60,9 @@ export function Home() {
     return (
         <div id="page-auth">
             <aside>
-                <strong>Toda pergunta tem uma resposta.</strong>
+                <h1>
+                    <strong>Toda pergunta tem uma resposta.</strong>
+                </h1>
                 <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
             </aside>
             <main>
@@ -68,7 +70,7 @@ export function Home() {
                     <img src={logoImg} alt="Letmeask" />
                     <button onClick={handleCreateRoom} className="create-room-button">
                         <img src={googleIconImg} alt="Logo do Google" />
-                        Fazer login com o Google
+                        Faça login com o Google
                     </button>
                     <div className="separator">ou entre em uma sala</div>
                     <form onSubmit={handleJoinRoom}>

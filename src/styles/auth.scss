@@ -3,7 +3,7 @@
 #page-auth {
   display: flex;
   align-items: stretch;
-  height: 100vh;
+  min-height: 100vh;
   // background: var(--color-primary);
   background-image: url('../assets/images/bg/bg-5.jpg');
   background-position: left;
@@ -11,7 +11,7 @@
   background-size: cover;
 
   aside {
-    flex: 7;
+    flex: 60%;
 
     color: #FFF;
 
@@ -19,31 +19,34 @@
     flex-direction: column;
     justify-content: center;
     
-    padding: 120px 80px;
-
+    // padding: 120px 80px;
+    padding: 80px;
+    text-shadow: var(--text-shadow);
+    
     img {
       // max-width: 320px;
       max-width: 160px;
     }
-
+    
     strong {
-      font: 700 36px 'Poppins', sans-serif;
-      line-height: 42px;
-      margin-top: 16px;
+      font: 700 36px var(--font-primary);
+      font-size: 3rem;
+      line-height: 1.2;
+      // margin-top: 16px;
     }
-
+    
     p {
-      font-size: 24px;
-      line-height: 32px;
+      font-size: 1.25rem;
       margin-top: 16px;
       color: var(--gray-5);
     }
   }
-
+  
   main {
-    flex: 8;
-
-    padding: 0 32px;
+    flex: 40%;
+    
+    // padding: 0 32px;
+    padding: 80px;
 
     display: flex;
     align-items: center;
@@ -56,12 +59,11 @@
 
   .main-content {
     background-color: #FFF;
-    padding: var(--card-padding);
     border-radius: var(--card-radius);
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 330px;
+    max-width: 270px;
     align-items: stretch;
     text-align: center;
 
@@ -74,7 +76,7 @@
       font-size: 24px;
       // margin: 64px 0 24px;
       margin-bottom: 1rem;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-primary);
     }
 
     form {
@@ -108,11 +110,10 @@
   }
 
   .create-room-button {
-    // height: 50px;
     border-radius: var(--button-radius);
     font-weight: 500;
-    background: #ea4335;
-    color: #FFF;
+    background: #FFF;
+    color: var(--gray-2);
     padding: var(--button-padding);
 
     display: flex;
@@ -120,7 +121,7 @@
     align-items: center;
 
     cursor: pointer;
-    border: 0;
+    border: 1px solid var(--gray-2);
 
     transition: filter 0.2s;
 
