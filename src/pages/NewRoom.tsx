@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom'
 
 // Importando imagens
 import logoImg from '../assets/images/logo.svg';
+import logoWhiteImg from '../assets/images/logo-white.svg';
 
 // Importando componentes
 import { Button } from '../components/Button';
@@ -46,6 +47,7 @@ export function NewRoom() {
   return (
     <div id="page-auth">
       <aside>
+        <img src={logoWhiteImg} alt="Letmeask" />
         <h1>
           <strong>Toda pergunta tem uma resposta.</strong>
         </h1>

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 // Importando imagens
 import logoImg from '../assets/images/logo.svg';
+import logoWhiteImg from '../assets/images/logo-white.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
 // Importando componentes
@@ -60,6 +61,7 @@ export function Home() {
     return (
         <div id="page-auth">
             <aside>
+                <img src={logoWhiteImg} alt="Letmeask" />
                 <h1>
                     <strong>Toda pergunta tem uma resposta.</strong>
                 </h1>
