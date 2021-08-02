@@ -1,24 +1,25 @@
 :root {
   // Palette
-  --color-primary: #835afd;
-  --color-primary-hover: #835afd;
-  --color-primary-disabled: #835afd;
-  --color-primary-highlighted: #F4F0FF;
+  --color-primary: #18594D;
+  --color-primary-hover: #18594D;
+  --color-primary-disabled: #18594D;
+  --color-primary-highlighted: #358c6331;
 
-  --color-secundary: #e559f9;
-  --color-secundary-hover: #e559f9;
-  --color-secundary-disabled: #e559f9;
-  --color-secundary-highlighted: #e559f9;
+  --color-secundary: #30BBF2;
+  --color-secundary-hover: #30BBF2;
+  --color-secundary-disabled: #30BBF2;
+  --color-secundary-highlighted: #30BBF2;
 
   // Gray
-  --gray-1: #737380;
-  --gray-2: #a8a8b3;
-  --gray-3: #DBDCDD;
-  --gray-4: #f8f8f8;
+  --gray-1: #29292e;
+  --gray-2: #737380;
+  --gray-3: #a8a8b3;
+  --gray-4: #DBDCDD;
+  --gray-5: #f8f8f8;
 
   // Shadow
   --shadow-color-1: rgba(0, 0, 0, 0.04);
-  --shadow-1: 0 2px 12px var(--shadow-color);
+  --shadow-1: 0 2px 12px rgba(0, 0, 0, 0.04);
 
   // Text
   --text-color: #29292e;
@@ -48,7 +49,7 @@
 }
 
 body {
-  background: var(--gray-4);
+  background: var(--gray-5);
   color: var(--text-color);
 }
 

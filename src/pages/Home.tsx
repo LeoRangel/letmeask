@@ -2,7 +2,6 @@ import { FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom'
 
 // Importando imagens
-import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
@@ -61,14 +60,12 @@ export function Home() {
     return (
         <div id="page-auth">
             <aside>
-                <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
                 <strong>Toda pergunta tem uma resposta.</strong>
                 <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
             </aside>
             <main>
                 <div className="main-content">
-                    {/* <img src={logoImg} alt="Letmeask" /> */}
-                    <h2>Criar uma nova sala</h2>
+                    <img src={logoImg} alt="Letmeask" />
                     <button onClick={handleCreateRoom} className="create-room-button">
                         <img src={googleIconImg} alt="Logo do Google" />
                         Fazer login com o Google

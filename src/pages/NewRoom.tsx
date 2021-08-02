@@ -3,7 +3,6 @@ import { FormEvent, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom'
 
 // Importando imagens
-import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg';
 
 // Importando componentes
@@ -47,13 +46,12 @@ export function NewRoom() {
   return (
     <div id="page-auth">
       <aside>
-        <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Toda pergunta tem uma resposta.</strong>
         <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
       </aside>
       <main>
         <div className="main-content">
-          {/* <img src={logoImg} alt="Letmeask" /> */}
+          <img src={logoImg} alt="Letmeask" />
           <h2>Criar uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
             <input
