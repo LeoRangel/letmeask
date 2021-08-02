@@ -2,11 +2,9 @@ import { FormEvent, useState } from 'react';
 // Obtém parametros passado na rota
 import { Link, useParams } from 'react-router-dom'
 
-import logoImg from '../assets/images/logo.svg';
-
 import { Button } from '../components/Button';
-import { RoomCode } from '../components/RoomCode';
 import { Question } from '../components/Question';
+import { RoomHeader } from '../components/RoomHeader';
 
 import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
@@ -73,12 +71,7 @@ export function Room() {
 
   return (
     <div id="page-room">
-      <header>
-        <div className="content my-container">
-          <img src={logoImg} alt="Letmeask" />
-          <RoomCode code={roomId} />
-        </div>
-      </header>
+      <RoomHeader roomId={roomId} />
 
       <main className="my-container-md">
         <div className="room-title">
