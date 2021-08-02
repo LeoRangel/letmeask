@@ -10,6 +10,11 @@
 > Para ver o projeto em execução acesse a [**DEMO**](https://letmeask-rho.vercel.app/)
 
 
+<p align="center">
+  <img alt="Tela de login do projeto" src="src/assets/images/telas-site.jpg" />
+</p>
+
+
 ## Versioning/Versionamento
 Esse projeto não possui um sistema de versionamento.
 
