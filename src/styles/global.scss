@@ -90,3 +90,16 @@ h1, h2, h3, h4, h5, h6 {
 .h6, h6 {
   font-size: 1rem;
 }
+
+.my-container,
+.my-container-md {
+  padding: 0 var(--card-padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-container {
+  max-width: 1200px;
+}
+.my-container-md {
+  max-width: 768px;
+}

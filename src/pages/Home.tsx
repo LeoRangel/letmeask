@@ -63,27 +63,27 @@ export function Home() {
             <aside>
                 <img src={logoWhiteImg} alt="Letmeask" />
                 <h1>
-                    <strong>Toda pergunta tem uma resposta.</strong>
+                    <strong>Every question has an answer.</strong>
                 </h1>
-                <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
+                <p>Learn and share knowledge with others.</p>
             </aside>
             <main>
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask" />
                     <button onClick={handleCreateRoom} className="create-room-button">
                         <img src={googleIconImg} alt="Logo do Google" />
-                        Faça login com o Google
+                        Login with Google
                     </button>
-                    <div className="separator">ou entre em uma sala</div>
+                    <div className="separator">Or enter a room</div>
                     <form onSubmit={handleJoinRoom}>
                         <input
                             type="text"
-                            placeholder="Digite o código da sala"
+                            placeholder="Enter room code"
                             onChange={event => setRoomCode(event.target.value)}
                             value={roomCode}
                         />
                         <Button type="submit">
-                            Entrar na sala
+                            Enter the room
                         </Button>
                     </form>
                 </div>

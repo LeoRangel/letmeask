@@ -1,17 +1,21 @@
 #page-room {
   header {
-    padding: 24px;
+    padding: var(--card-padding) 0;
     border-bottom: 1px solid var(--gray-3);
 
     .content {
-      max-width: 1120px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
 
       > img {
-        max-height: 45px;
+        max-height: 55px;
+
+        @media(max-width: 768px) {
+          margin-bottom: 1.5rem;
+        }
       }
 
       > div {
@@ -22,26 +26,30 @@
           height: 40px;
         }
       }
+
+      @media(max-width: 768px) {
+        justify-content: center;
+        flex-direction: column;
+      }
     }
   }
 
   main {
-    max-width: 800px;
     margin: 0 auto;
 
     .room-title {
       margin: 32px 0 24px;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
 
       h1 {
         font-family: var(--font-primary);
-        font-size: 24px;
         color: var(--text-color);
+        margin-right: 16px;
       }
 
       span {
-        margin-left: 16px;
         background: var(--color-secundary);
         border-radius: 9999px;
         padding: 8px 16px;
@@ -67,31 +75,34 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         margin-top: 16px;
 
         .user-info {
           display: flex;
           align-items: center;
-
+          margin-bottom: 15px;
+          
           img {
             width: 32px;
             height: 32px;
             border-radius: 50%;
           }
-
+          
           span {
             margin-left: 8px;
             color: var(--text-color);
             font-weight: 500;
             font-size: .9rem;
           }
+          
         }
-
+        
         > span {
           font-size: .9rem;
           color: var(--gray-2);
           font-weight: 500;
-
+          
           button {
             background: transparent;
             border: 0;

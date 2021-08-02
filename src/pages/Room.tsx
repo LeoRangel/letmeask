@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 // Obtém parametros passado na rota
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import logoImg from '../assets/images/logo.svg';
 
@@ -74,21 +74,23 @@ export function Room() {
   return (
     <div id="page-room">
       <header>
-        <div className="content">
+        <div className="content my-container">
           <img src={logoImg} alt="Letmeask" />
           <RoomCode code={roomId} />
         </div>
       </header>
 
-      <main>
+      <main className="my-container-md">
         <div className="room-title">
-          <h1>Sala {title}</h1>
-          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+          <h1 className="h2">
+            Room: {title}
+          </h1>
+          {questions.length > 0 && <span>{questions.length} question(s)</span>}
         </div>
 
         <form onSubmit={handleSendQuestion}>
           <textarea
-            placeholder="O que você quer perguntar?"
+            placeholder="What do you want to ask?"
             onChange={event => setNewQuestion(event.target.value)}
             value={newQuestion}
           />
@@ -100,11 +102,14 @@ export function Room() {
                 <span>{user.name}</span>
               </div>
             ) : (
-              <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+              <span>To submit a question, <Link to="/">Click here</Link>.</span>
             )}
-            <Button type="submit" disabled={!user}>Enviar pergunta</Button>
+            <Button type="submit" disabled={!user}>Send question</Button>
           </div>
         </form>
+
+        <br />
+        <hr />
 
         <div className="question-list">
           {questions.map(question => {
