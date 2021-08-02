@@ -94,6 +94,19 @@
     .question-list {
       margin-top: 32px;
       margin-bottom: 32px;
+
+      .no-questions{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+        img{
+          margin-bottom: 1.5rem;
+        }
+      }
     }
   }
 }
