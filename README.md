@@ -1,6 +1,6 @@
 # Letmeask: Leandro Rangel 
 
-[![Repositório](https://img.shields.io/badge/LeoRangel-letmeask-blueviolet)](https://github.com/LeoRangel/letmeask/)
+[![Repositório](https://img.shields.io/badge/LeoRangel-letmeask-brightgreen)](https://github.com/LeoRangel/letmeask/)
 [![licence mit](https://img.shields.io/github/license/LeoRangel/letmeask)](https://github.com/LeoRangel/letmeask/blob/main/LICENSE)
 
 > :speech_balloon: Projeto de App web de gerenciamento de perguntas utilizando React e a plataforma Firebase

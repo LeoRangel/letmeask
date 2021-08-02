@@ -141,7 +141,7 @@ export function Room() {
               );
             })
           ) : (
-            <div class="no-questions">
+            <div className="no-questions">
               <img src={emptyQuestionsImg} alt="Letmeask" />
               <span>Nenhuma questão ainda</span>
             </div>
