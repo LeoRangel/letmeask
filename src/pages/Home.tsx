@@ -67,10 +67,11 @@ export function Home() {
             </aside>
             <main>
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask" />
-                    <button onClick={handleCreateRoom} className="create-room">
+                    {/* <img src={logoImg} alt="Letmeask" /> */}
+                    <h2>Criar uma nova sala</h2>
+                    <button onClick={handleCreateRoom} className="create-room-button">
                         <img src={googleIconImg} alt="Logo do Google" />
-                        Crie sua sala com o Google
+                        Fazer login com o Google
                     </button>
                     <div className="separator">ou entre em uma sala</div>
                     <form onSubmit={handleJoinRoom}>

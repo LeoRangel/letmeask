@@ -1,12 +1,55 @@
+:root {
+  // Palette
+  --color-primary: #835afd;
+  --color-primary-hover: #835afd;
+  --color-primary-disabled: #835afd;
+  --color-primary-highlighted: #F4F0FF;
+
+  --color-secundary: #e559f9;
+  --color-secundary-hover: #e559f9;
+  --color-secundary-disabled: #e559f9;
+  --color-secundary-highlighted: #e559f9;
+
+  // Gray
+  --gray-1: #737380;
+  --gray-2: #a8a8b3;
+  --gray-3: #DBDCDD;
+  --gray-4: #f8f8f8;
+
+  // Shadow
+  --shadow-color-1: rgba(0, 0, 0, 0.04);
+  --shadow-1: 0 2px 12px var(--shadow-color);
+
+  // Text
+  --text-color: #29292e;
+
+  // Link
+  --link-color: var(--color-secundary);
+
+  // Card
+  --card-radius: .5rem;
+  --card-padding: 1.5rem;
+  
+  // Button
+  --button-radius: .5rem;
+  --button-padding: 1rem 1.5rem;
+  
+  // Input
+  --input-radius: .5rem;
+  --input-padding: 1.5rem;
+
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
-  background: #f8f8f8;
-  color: #29292e;
+  background: var(--gray-4);
+  color: var(--text-color);
 }
 
 body, input, button, textarea {

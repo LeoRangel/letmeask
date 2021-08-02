@@ -492,7 +492,7 @@ history.push('/rooms/new');
 #### (Ex.: Chamar função em elemento Html)
 > A função handleCreateRoom:
 ```javascript
-<button onClick={handleCreateRoom} className="create-room"></button>
+<button onClick={handleCreateRoom} className="create-room-button"></button>
 ```
 
 #### (Criar pasta "src/contexts")

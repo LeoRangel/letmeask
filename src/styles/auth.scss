@@ -1,3 +1,5 @@
+
+
 #page-auth {
   display: flex;
   align-items: stretch;
@@ -6,7 +8,7 @@
   aside {
     flex: 7;
 
-    background: #835afd;
+    background: var(--color-primary);
     color: #FFF;
 
     display: flex;
@@ -30,7 +32,7 @@
       font-size: 24px;
       line-height: 32px;
       margin-top: 16px;
-      color: #f8f8f8;
+      color: var(--gray-4);
     }
   }
 
@@ -45,30 +47,35 @@
   }
 
   .main-content {
+    background-color: #FFF;
+    padding: var(--card-padding);
+    border-radius: var(--card-radius);
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 320px;
+    max-width: 330px;
     align-items: stretch;
     text-align: center;
 
     > img {
       align-self: center;
+      margin-bottom: 40px;
     }
 
     h2 {
       font-size: 24px;
-      margin: 64px 0 24px;
+      // margin: 64px 0 24px;
+      margin-bottom: 1rem;
       font-family: 'Poppins', sans-serif;
     }
 
     form {
       input {
         height: 50px;
-        border-radius: 8px;
-        padding: 0 16px;
+        border-radius: var(--input-radius);
+        padding: var(--input-padding);
         background: #FFF;
-        border: 1px solid #a8a8b3;
+        border: 1px solid var(--gray-2);
       }
 
       button { 
@@ -81,23 +88,24 @@
     }
 
     p {
-      font-size: 14px;
-      color: #737380;
+      font-size: .9rem;
+      color: var(--gray-1);
       margin-top: 16px;
-
+      
       a {
-        color: #e559f9;
+        font-size: .9rem;
+        color: var(--color-secundary);
       }
     }
   }
 
-  .create-room {
-    margin-top: 64px;
-    height: 50px;
-    border-radius: 8px;
+  .create-room-button {
+    // height: 50px;
+    border-radius: var(--button-radius);
     font-weight: 500;
     background: #ea4335;
     color: #FFF;
+    padding: var(--button-padding);
 
     display: flex;
     justify-content: center;
@@ -118,8 +126,8 @@
   }
 
   .separator {
-    font-size: 14px;
-    color: #a8a8b3;
+    font-size: 1rem;
+    color: var(--gray-1);
 
     margin: 32px 0;
     display: flex;
@@ -129,7 +137,7 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: var(--gray-1);
       margin-right: 16px;
     }
 
@@ -137,7 +145,7 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: #a8a8b3;
+      background: var(--gray-1);
       margin-left: 16px;
     }
   }
