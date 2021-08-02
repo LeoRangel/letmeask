@@ -70,9 +70,11 @@ export function AdminRoom() {
 
       <RoomHeader roomId={roomId} handleEndRoom={handleEndRoom} />
 
-      <main>
+      <main className="my-container-md">
         <div className="room-title">
-          <h1>Sala {title}</h1>
+          <h1 className="h2">
+            Room: {title}
+          </h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
         </div>
 

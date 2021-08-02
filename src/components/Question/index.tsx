@@ -36,7 +36,7 @@ export function Question({
           <img src={author.avatar} alt={author.name} />
           <span>{author.name}</span>
         </div>
-        <div>
+        <div className="action-button">
           {/* Aqui serão passados os botões de interação */}
           {children}
         </div>

@@ -9,8 +9,8 @@
   }
   
   &.highlighted {
-    background: var(--color-primary-highlighted);
-    border: 1px solid var(--color-primary);
+    background: var(--color-secundary-highlighted);
+    border: 1px solid var(--color-secundary);
     
     footer .user-info span {
       color: var(--text-color);
@@ -18,7 +18,8 @@
   }
   
   &.answered {
-    background: var(--gray-4);
+    // background: var(--gray-4);
+    background: var(--color-primary-highlighted);
   }
 
   p {
@@ -28,12 +29,14 @@
   footer {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: 24px;
+    text-align: left;
 
     .user-info {
       display: flex;
       align-items: center;
+      margin-top: 1.5rem;
 
       img {
         width: 32px;
@@ -46,11 +49,13 @@
         color: var(--gray-2);
         font-size: .9rem;
       }
-    }
 
-    > div {
+    }
+    
+    > .action-button {
       display: flex;
       gap: 16px;
+      margin-top: 1.5rem;
     }
 
     button {
@@ -66,10 +71,10 @@
         gap: 8px;
 
         &.liked {
-          color: var(--color-primary);
+          color: var(--color-secundary);
 
           svg path {
-            stroke: var(--color-primary);
+            stroke: var(--color-secundary);
           }
         }
       }
@@ -78,5 +83,31 @@
         filter: brightness(0.7);
       }
     }
+
+    .badge-answered,
+    .badge-highlighted {
+      border-radius: 9999px;
+      padding: 8px 16px;
+      font-weight: 500;
+      font-size: .9rem;
+    }
+    .badge-answered {
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+    }
+    .badge-highlighted {
+      border: 1px solid var(--color-secundary);
+      color: var(--color-secundary);
+    }
+
+    @media(max-width: 768px) {
+      flex-direction: column;
+    }
+
+  }
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
   }
 }

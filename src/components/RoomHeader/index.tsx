@@ -18,7 +18,7 @@ export function RoomHeader({ roomId, handleEndRoom }: RoomHeaderProps) {
         <img src={logoImg} alt="Letmeask" />
         <div>
           <RoomCode code={roomId} />
-          {handleEndRoom && <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>}
+          {handleEndRoom && <Button isOutlined onClick={handleEndRoom}>Close room</Button>}
         </div>
       </div>
     </header>
