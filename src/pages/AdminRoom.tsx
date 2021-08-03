@@ -2,6 +2,7 @@ import { useHistory, useParams } from 'react-router-dom'
 
 import deleteImg from '../assets/images/delete.svg';
 import checkImg from '../assets/images/check.svg';
+import removeCheckImg from '../assets/images/remove-check.svg';
 import answerImg from '../assets/images/answer.svg';
 
 import { Question } from '../components/Question';
@@ -92,14 +93,15 @@ export function AdminRoom() {
                   isAnswered={question.isAnswered}
                   isHighlighted={question.isHighlighted}
                 >
+
                   <button
                     type="button"
                     onClick={() => handleCheckQuestionAsAnswered(question.id, question.isAnswered)}
                   >
-                    <img src={checkImg} alt="Marcar pergunta como respondida" />
+                    <img src={(question.isAnswered) ? (removeCheckImg) : (checkImg)} alt="Marcar pergunta como respondida" />
                   </button>
 
-                  {!question.isAnswered && (
+                  {(!question.isAnswered) && (
                     <button
                       type="button"
                       onClick={() => handleHighlightQuestion(question.id, question.isHighlighted)}
