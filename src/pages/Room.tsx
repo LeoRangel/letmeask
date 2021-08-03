@@ -11,7 +11,9 @@ import emptyQuestionsImg from '../assets/images/empty-questions.svg';
 
 import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
+import { useTheme } from '../hooks/useTheme';
 import { database } from '../services/firebase';
+
 
 import '../styles/room.scss';
 
@@ -22,6 +24,8 @@ type RoomParams = {
 
 export function Room() {
   const { user, signOut } = useAuth();
+  const { theme, toggleTheme } = useTheme();
+
   // Obtém parametro de ID da sala passado na rota
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState('');
@@ -73,8 +77,9 @@ export function Room() {
   }
 
   return (
-    <div id="page-room">
-      <RoomHeader user={user} roomId={roomId} signOut={signOut} />
+    <div id="page-room" className={`theme-${theme}`}>
+
+      <RoomHeader user={user} roomId={roomId} signOut={signOut} theme={theme} toggleTheme={toggleTheme} />
 
       <main className="my-container-md">
         <div className="room-title">

@@ -12,19 +12,24 @@ type User = {
   name: string;
   avatar: string;
 }
+type Theme = 'light' | 'dark';
 
 type RoomHeaderProps = {
   user: User | undefined;
   roomId: string;
   signOut: () => Promise<void>;
   handleEndRoom?: () => Promise<void>;
+  theme: Theme;
+  toggleTheme: () => void;
 }
 
 export function RoomHeader({
   user,
   roomId,
   signOut,
-  handleEndRoom
+  handleEndRoom,
+  theme,
+  toggleTheme
 }: RoomHeaderProps) {
 
   return (
@@ -32,6 +37,9 @@ export function RoomHeader({
       <div className="content my-container">
         <img src={logoImg} alt="Letmeask" />
         <div>
+          <button onClick={toggleTheme}>
+            Tema: {theme}
+          </button>
           <RoomCode code={roomId} />
           {(handleEndRoom) &&
             <Button isOutlined onClick={handleEndRoom}>
