@@ -105,7 +105,6 @@ export function Room() {
         </form>
 
         <br />
-        <hr />
 
         <div className="question-list">
           {(questions.length > 0) ? (

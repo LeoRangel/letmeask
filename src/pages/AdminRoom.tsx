@@ -78,7 +78,7 @@ export function AdminRoom() {
           <h1 className="h2">
             Room: {title}
           </h1>
-          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+          {questions.length > 0 && <span className="badge-questions-number">{questions.length} pergunta(s)</span>}
         </div>
 
         <div className="question-list">
