@@ -21,7 +21,7 @@ type RoomParams = {
 }
 
 export function Room() {
-  const { user } = useAuth();
+  const { user, signOut } = useAuth();
   // Obtém parametro de ID da sala passado na rota
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState('');
@@ -74,7 +74,7 @@ export function Room() {
 
   return (
     <div id="page-room">
-      <RoomHeader roomId={roomId} />
+      <RoomHeader user={user} roomId={roomId} signOut={signOut} />
 
       <main className="my-container-md">
         <div className="room-title">
@@ -98,7 +98,7 @@ export function Room() {
                 <span>{user.name}</span>
               </div>
             ) : (
-              <span>To submit a question, <Link to="/">Click here</Link>.</span>
+              <span>To submit a question, please <Link to="/">login</Link>.</span>
             )}
             <Button type="submit" disabled={!user}>Send question</Button>
           </div>

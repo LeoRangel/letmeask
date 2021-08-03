@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { auth, firebase } from "../services/firebase";
 
 // Tipagens - definindo os tipos de dado dos componentes
@@ -12,6 +13,7 @@ type AuthContextType = {
   // Função asincrona retorna Promise
   // Função que não tem retorno <void>
   signInWithGoogle: () => Promise<void>;
+  signOut: () => Promise<void>;
 }
 type AuthContextProviderProps = {
   children: ReactNode;
@@ -22,6 +24,7 @@ export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthContextProvider(props: AuthContextProviderProps) {
   const [user, setUser] = useState<User>();
+  const history = useHistory();
 
   // O useEffect irá executar a função somente uma vez ao iniciar o app
   // Recupera o estado do usuário no app se ele sai ou desloga (pois o estado só fica salvo enquanto ele está no app)
@@ -77,10 +80,16 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     }
   }
 
+  async function signOut() {
+    await auth.signOut();
+    setUser(undefined);
+    history.push('/');
+  }
+
   return (
 
     // As propriedades com os dados do usuário e a função de login com Google poderão ser acessadas pelos componentes "filhos" deste
-    <AuthContext.Provider value={{ user, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, signInWithGoogle, signOut }}>
       {/* Vai pegar os componentes inserido como children, ou seja, as rotas (no arquivo App.tsx) */}
       {props.children}
     </AuthContext.Provider>

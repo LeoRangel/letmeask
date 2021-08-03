@@ -10,7 +10,7 @@ import { RoomHeader } from '../components/RoomHeader';
 // Importando imagens
 import emptyQuestionsImg from '../assets/images/empty-questions.svg';
 
-// import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
@@ -21,7 +21,7 @@ type RoomParams = {
 }
 
 export function AdminRoom() {
-  // const { user } = useAuth();
+  const { user, signOut } = useAuth();
   const history = useHistory()
   const params = useParams<RoomParams>();
   const roomId = params.id;
@@ -71,7 +71,7 @@ export function AdminRoom() {
   return (
     <div id="page-room">
 
-      <RoomHeader roomId={roomId} handleEndRoom={handleEndRoom} />
+      <RoomHeader user={user} roomId={roomId} signOut={signOut} handleEndRoom={handleEndRoom} />
 
       <main className="my-container-md">
         <div className="room-title">
