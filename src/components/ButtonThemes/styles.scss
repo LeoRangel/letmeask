@@ -1,27 +1,21 @@
-.button {
+.buttonThemes {
   border-radius: var(--button-radius);
   font-weight: 500;
-  background: var(--color-primary);
-  color: #FFF;
+  background: transparent;
+  color: var(--color-primary);
   padding: var(--button-padding);
+  border: 1px solid var(--color-primary);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   cursor: pointer;
-  border: 0;
 
   transition: filter 0.2s;
 
   img {
-    margin-right: 8px;
-  }
-
-  &.outlined {
-    background: transparent;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    margin-left: 8px;
   }
 
   &:not(:disabled):hover {

@@ -3,6 +3,7 @@ import logoutIcon from '../../assets/images/logout-icon.svg';
 import closeIcon from '../../assets/images/close-icon.svg';
 
 import { Button } from '../Button';
+import { ButtonThemes } from '../ButtonThemes';
 import { RoomCode } from '../RoomCode';
 
 import './styles.scss';
@@ -37,16 +38,17 @@ export function RoomHeader({
       <div className="content my-container">
         <img src={logoImg} alt="Letmeask" />
         <div>
-          <button onClick={toggleTheme}>
-            Tema: {theme}
-          </button>
+          <ButtonThemes onClick={toggleTheme} theme={theme} />
+
           <RoomCode code={roomId} />
+
           {(handleEndRoom) &&
             <Button isOutlined onClick={handleEndRoom}>
               <img src={closeIcon} alt="Close door" />
               Close room
             </Button>
           }
+
           {(user) &&
             <Button onClick={signOut}>
               <img src={logoutIcon} alt="Logout" />
