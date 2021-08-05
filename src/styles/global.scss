@@ -27,7 +27,7 @@
   --shadow-1: 0 2px 12px rgba(0, 0, 0, 0.04);
 
   // Text
-  --text-color: #29292e;
+  --text-color: var(--gray-1);
   --text-shadow: 0 1px 3px #000000cc;
 
   // Link
@@ -40,6 +40,7 @@
   // Button
   --button-radius: .5rem;
   --button-padding: 1rem 1.5rem;
+  --button-padding-small: .4rem .6rem;
   
   // Input
   --input-radius: .5rem;

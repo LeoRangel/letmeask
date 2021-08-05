@@ -43,14 +43,14 @@ export function RoomHeader({
           <RoomCode code={roomId} />
 
           {(handleEndRoom) &&
-            <Button isOutlined onClick={handleEndRoom}>
+            <Button isSmall isOutlined onClick={handleEndRoom}>
               <img src={closeIcon} alt="Close door" />
               Close room
             </Button>
           }
 
           {(user) &&
-            <Button onClick={signOut}>
+            <Button isSmall onClick={signOut}>
               <img src={logoutIcon} alt="Logout" />
               Logout
             </Button>
