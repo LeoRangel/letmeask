@@ -25,10 +25,12 @@ export function ThemeContextProvider(props: ThemeContextProviderProps) {
     // Salvando tema escolhido no localStorage
     useEffect(() => {
         localStorage.setItem('theme', currentTheme);
+        document.documentElement.setAttribute("data-theme", currentTheme);
     }, [currentTheme]);
 
     function toggleTheme() {
-        setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light')
+        setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light');
+        document.documentElement.setAttribute("data-theme", currentTheme);
     }
 
     return (
