@@ -1,6 +1,6 @@
 .room-code {
   min-height: 40px;
-  border-radius: 8px;
+  border-radius: var(--button-radius);
   overflow: hidden;
   
   background: transparent;
@@ -20,6 +20,7 @@
   }
 
   span {
+    color: var(--text-color-1);
     display: block;
     align-self: center;
     flex: 1;

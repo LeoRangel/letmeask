@@ -1,4 +1,5 @@
 import logoImg from '../../assets/images/logo.svg';
+import logoMescledImg from '../../assets/images/logo-mescled.svg';
 import logoutIcon from '../../assets/images/logout-icon.svg';
 import closeIcon from '../../assets/images/close-icon.svg';
 
@@ -36,7 +37,11 @@ export function RoomHeader({
   return (
     <header>
       <div className="content my-container">
-        <img src={logoImg} alt="Letmeask" />
+        {(theme === 'light') ? (
+          <img src={logoImg} alt="Letmeask" />
+        ) : (
+          <img src={logoMescledImg} alt="Letmeask" />
+        )}
         <div>
           <ToggleTheme onClick={toggleTheme} theme={theme} />
 

@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 // Importando imagens
 import logoImg from '../assets/images/logo.svg';
 import logoWhiteImg from '../assets/images/logo-white.svg';
+import logoMescledImg from '../assets/images/logo-mescled.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
 // Importando componentes
@@ -13,6 +14,7 @@ import { database } from '../services/firebase';
 
 // Importando hooks
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme';
 
 // Importando estilos
 import '../styles/auth.scss';
@@ -21,6 +23,7 @@ export function Home() {
     const history = useHistory();
     const { user, signInWithGoogle } = useAuth()
     const [roomCode, setRoomCode] = useState('');
+    const { theme } = useTheme();
 
     // Leva usuário para a tela de "new room", se este estiver autenticado
     async function handleCreateRoom() {
@@ -69,7 +72,11 @@ export function Home() {
             </aside>
             <main>
                 <div className="main-content">
-                    <img src={logoImg} alt="Letmeask" />
+                    {(theme === 'light') ? (
+                        <img src={logoImg} alt="Letmeask" />
+                    ) : (
+                        <img src={logoMescledImg} alt="Letmeask" />
+                    )}
                     <button onClick={handleCreateRoom} className="create-room-button">
                         <img src={googleIconImg} alt="Logo do Google" />
                         Login with Google

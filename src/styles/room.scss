@@ -11,7 +11,7 @@
 
       h1 {
         font-family: var(--font-primary);
-        color: var(--text-color);
+        color: var(--text-color-1);
         margin-right: 16px;
         
         // @media(max-width: 768px) {
@@ -37,14 +37,14 @@
     form {
 
       padding-bottom: var(--card-padding);
-      border-bottom: 1px solid var(--gray-3);
+      border-bottom: 1px solid var(--border-color-1);
 
       textarea {
         width: 100%;
         border: 0;
         padding: 16px;
         border-radius: 8px;
-        background: #FFF;
+        background:  var(--bg-color-white);
         box-shadow: var(--shadow-1);
         resize: vertical;
         min-height: 130px;
@@ -70,7 +70,7 @@
           
           span {
             margin-left: 8px;
-            color: var(--text-color);
+            color: var(--text-color-1);
             font-weight: 500;
             font-size: .9rem;
           }
@@ -79,7 +79,7 @@
         
         > span {
           font-size: .9rem;
-          color: var(--gray-2);
+          color: var(--text-color-2);
           font-weight: 500;
           
           button {

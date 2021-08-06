@@ -16,18 +16,27 @@
   --color-secundary-highlighted: #30bbf227;
 
   // Gray
-  --gray-1: #29292e;
-  --gray-2: #737380;
-  --gray-3: #a8a8b3;
-  --gray-4: #DBDCDD;
-  --gray-5: #f8f8f8;
+  --gray-1: #212529; // Cor de texto 1 (padrão do tema light)
+  --gray-2: #495057; // Cor de textos 2
+  --gray-3: #adb5bd; // Ícones, bordas em input e linhas de separador
+  --gray-4: #dee2e6; // Background 2
+  --gray-5: #f8f9fa; // Background 1 (padrão do tema light)
 
   // Shadow
-  --shadow-color-1: rgba(0, 0, 0, 0.04);
   --shadow-1: 0 2px 12px rgba(0, 0, 0, 0.04);
 
+  // Border
+  --border-color-1: var(--gray-3);
+  
+  // Background color
+  --bg-color-1: var(--gray-5);
+  --bg-color-2: var(--gray-4);
+  --bg-color-white: white;
+
   // Text
-  --text-color: var(--gray-1);
+  --text-color-1: var(--gray-1);
+  --text-color-2: var(--gray-2);
+  --text-color-3: var(--gray-3);
   --text-shadow: 0 1px 3px #000000cc;
 
   // Link
@@ -49,7 +58,15 @@
 }
 
 [data-theme="dark"] {
+  // Gray
+  --gray-1: #f8f9fa; // Cor de texto 1 (padrão do tema light)
+  --gray-2: #dee2e6; // Cor de textos 2
+  --gray-3: #adb5bd; // Ícones, bordas em input e linhas de separador
+  --gray-4: #495057; // Background 2
+  --gray-5: #212529; // Background 1 (padrão do tema light)
 
+  // Background color
+  --bg-color-white: var(--gray-4);
 }
 
 * {
@@ -60,8 +77,8 @@
 }
 
 body {
-  background: var(--gray-5);
-  color: var(--text-color);
+  background: var(--bg-color-1);
+  color: var(--text-color-1);
 }
 
 body, input, button, textarea {
