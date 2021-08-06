@@ -9,7 +9,7 @@
   }
   
   &.highlighted {
-    background: var(--color-secundary-highlighted);
+    background: var(--color-primary-highlighted);
     border: 1px solid var(--color-secundary);
     
     footer .user-info span {
@@ -18,7 +18,7 @@
   }
   
   &.answered {
-    background: var(--color-primary-highlighted);
+    background: var(--color-secundary-highlighted);
   }
 
   p {
@@ -91,8 +91,8 @@
       font-size: .9rem;
     }
     .badge-answered {
-      border: 1px solid var(--color-primary);
-      color: var(--color-primary);
+      border: 1px solid var(--color-secundary);
+      color: var(--color-secundary);
     }
     .badge-highlighted {
       border: 1px solid var(--color-secundary);
@@ -108,5 +108,36 @@
   @media(max-width: 768px) {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+
+
+[data-theme="dark"] {
+
+  .question{
+    &.highlighted {
+      border: 1px solid var(--color-primary);
+    }
+
+    footer {
+      button {
+        &.like-button {
+          &.liked {
+            color: var(--color-primary);
+            svg path {
+              stroke: var(--color-primary);
+            }
+          }
+        }
+      }
+  
+      .badge-highlighted {
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+      }
+  
+    }
+    
   }
 }

@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from 'react'
 
-import lightModeIcon from '../../assets/images/light-mode.svg';
-import darkModeIcon from '../../assets/images/dark-mode.svg';
+import lightModeIcon from '../../assets/images/icon/light-mode.svg';
+import darkModeIcon from '../../assets/images/icon/dark-mode.svg';
 
 import './styles.scss';
 

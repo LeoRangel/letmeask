@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 import logoImg from '../assets/images/logo.svg';
 import logoWhiteImg from '../assets/images/logo-white.svg';
 import logoMescledImg from '../assets/images/logo-mescled.svg';
-import googleIconImg from '../assets/images/google-icon.svg';
+import googleIconImg from '../assets/images/icon/google-icon.svg';
 
 // Importando componentes
 import { Button } from '../components/Button';

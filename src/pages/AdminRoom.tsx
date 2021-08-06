@@ -1,9 +1,9 @@
 import { useHistory, useParams } from 'react-router-dom'
 
-import deleteImg from '../assets/images/delete.svg';
-import checkImg from '../assets/images/check.svg';
-import removeCheckImg from '../assets/images/remove-check.svg';
-import answerImg from '../assets/images/answer.svg';
+import deleteImg from '../assets/images/icon/delete.svg';
+import checkImg from '../assets/images/icon/check.svg';
+import removeCheckImg from '../assets/images/icon/remove-check.svg';
+import answerImg from '../assets/images/icon/answer.svg';
 
 import { Question } from '../components/Question';
 import { RoomHeader } from '../components/RoomHeader';

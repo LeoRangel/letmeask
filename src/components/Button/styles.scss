@@ -1,18 +1,22 @@
 .button {
+  // background: var(--color-primary);
+  background-image: var(--button-bg-gradient-1);
+  color: #FFF;
   border-radius: var(--button-radius);
   font-weight: 500;
-  background: var(--color-primary);
-  color: #FFF;
   padding: var(--button-padding);
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
   
   cursor: pointer;
   border: 0;
+
+  transition: background 0.5s;
+  background-size: 200% auto;
   
-  transition: filter 0.2s;
+  // transition: filter 0.2s;
   
   img {
     margin-right: 8px;
@@ -24,12 +28,13 @@
 
   &.outlined {
     background: transparent;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    border: 1px solid var(--color-secundary);
+    color: var(--color-secundary);
   }
 
   &:not(:disabled):hover {
-    filter: brightness(0.9);
+    // filter: brightness(0.9);
+    background-position: right center;
   }
 
   &:disabled {

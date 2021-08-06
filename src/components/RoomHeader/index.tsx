@@ -1,7 +1,7 @@
 import logoImg from '../../assets/images/logo.svg';
 import logoMescledImg from '../../assets/images/logo-mescled.svg';
-import logoutIcon from '../../assets/images/logout-icon.svg';
-import closeIcon from '../../assets/images/close-icon.svg';
+import logoutIcon from '../../assets/images/icon/logout-icon.svg';
+// import closeIcon from '../../assets/images/icon/close-icon.svg';
 
 import { Button } from '../Button';
 import { ToggleTheme } from '../ToggleTheme';
@@ -49,7 +49,7 @@ export function RoomHeader({
 
           {(handleEndRoom) &&
             <Button isSmall isOutlined onClick={handleEndRoom}>
-              <img src={closeIcon} alt="Close door" />
+              {/* <img src={closeIcon} alt="Close door" /> */}
               Close room
             </Button>
           }

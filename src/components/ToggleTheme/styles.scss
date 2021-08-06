@@ -12,7 +12,8 @@
   align-items: center;
   transition: all linear .3s;
   position: relative;
-  
+
+  transition: background 0.5s;
   
   span {
     display: flex;
@@ -36,10 +37,16 @@
 
 [data-theme="dark"] {
   .toggleTheme {
-    background: var(--color-primary);
+    background: var(--button-bg-gradient-1);
+    background-size: 200% auto;
     
     span {
       left: 32px;
+    }
+
+    &:not(:disabled):hover {
+      // filter: brightness(0.9);
+      background-position: right center;
     }
   }
 }

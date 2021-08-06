@@ -4,14 +4,19 @@
   overflow: hidden;
   
   background: transparent;
-  border: 1px solid var(--color-primary);
+  // border: 1px solid var(--button-bg-gradient-1);
+  border: 0;
+  background: var(--button-bg-gradient-1);
+  padding-right: 1px;
   cursor: pointer;
   
   display: flex;
   flex-wrap: nowrap;
 
+  transition: 0.5s;
+  background-size: 200% auto;
+
   div {
-    background: var(--color-primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +25,7 @@
   }
 
   span {
+    background-color: var(--bg-color-1);
     color: var(--text-color-1);
     display: block;
     align-self: center;
@@ -29,5 +35,12 @@
     font-size: .9rem;
     font-weight: 500;
     overflow: hidden;
+    border-radius: 0 var(--button-radius) var(--button-radius) 0;
   }
+
+  
+  // &:not(:disabled):hover {
+  //   // filter: brightness(0.9);
+  //   background-position: right center;
+  // }
 }
