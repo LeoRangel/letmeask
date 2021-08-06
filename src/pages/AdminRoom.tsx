@@ -34,15 +34,17 @@ export function AdminRoom() {
   const { title, questions } = useRoom(roomId)
 
   async function handleEndRoom() {
-    await database.ref(`rooms/${roomId}`).update({
-      endedAt: new Date(),
-    })
+    if (window.confirm('Are you sure you want to end this room?')) {
+      await database.ref(`rooms/${roomId}`).update({
+        endedAt: new Date(),
+      })
 
-    history.push('/');
+      history.push('/');
+    }
   }
 
   async function handleDeleteQuestion(questionId: string) {
-    if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
+    if (window.confirm('Are you sure you want to delete this question?')) {
       await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
     }
   }
@@ -126,7 +128,7 @@ export function AdminRoom() {
           ) : (
             <div className="no-questions">
               <img src={emptyQuestionsImg} alt="Letmeask" />
-              <span>Nenhuma questão ainda</span>
+              <span>No questions yet</span>
             </div>
           )}
         </div>
