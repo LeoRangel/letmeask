@@ -77,11 +77,24 @@ export function Home() {
                     ) : (
                         <img src={logoMescledImg} alt="Letmeask" />
                     )}
-                    <button onClick={handleCreateRoom} className="create-room-button">
-                        <img src={googleIconImg} alt="Logo do Google" />
-                        Login with Google
-                    </button>
-                    <div className="separator">Or enter a room</div>
+
+                    {(user) ? (
+                        <>
+                            <h2>
+                                Welcome, {user.name}!
+                            </h2>
+                            <button onClick={handleCreateRoom} className="create-room-button">
+                                Create a new room
+                            </button>
+                        </>
+                    ) : (
+                        <button onClick={handleCreateRoom} className="create-room-button">
+                            <img src={googleIconImg} alt="Logo do Google" />
+                            Login with Google
+                        </button>
+                    )}
+
+                    <div className="separator">or enter a room</div>
                     <form onSubmit={handleJoinRoom}>
                         <input
                             type="text"

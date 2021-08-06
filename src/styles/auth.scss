@@ -71,7 +71,7 @@
 
     border-radius: 50px 0 0 50px;
     margin: 0 0 0 10px;
-    background: var(--bg-color-white);
+    background: var(--bg-color-1);
     box-shadow: var(--shadow-1);
 
     @media(max-width: 768px) {
@@ -83,8 +83,7 @@
   }
 
   .main-content {
-    background:  var(--bg-color-white);
-    border-radius: var(--card-radius);
+    // border-radius: var(--card-radius);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -142,9 +141,10 @@
   .create-room-button {
     border-radius: var(--button-radius);
     font-weight: 500;
-    background:  var(--bg-color-white);
+    background:  transparent;
     color: var(--text-color-2);
     padding: var(--button-padding);
+    // margin-top: 16px;
 
     display: flex;
     justify-content: center;
@@ -186,6 +186,19 @@
       height: 1px;
       background: var(--border-color-1);
       margin-left: 16px;
+    }
+  }
+}
+
+
+[data-theme="dark"] {
+  #page-auth {
+    .main-content {
+      form {
+        input {
+          border: 0;
+        }
+      }
     }
   }
 }
