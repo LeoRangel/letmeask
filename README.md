@@ -23,6 +23,12 @@
   <img alt="Tela de login do projeto" src="src/assets/images/telas-site.jpg" />
 </p>
 
+## Tecnologias e Ferramentas
+- React
+- Typescript
+- Firebase
+- Sass
+
 ## Versioning/Versionamento
 Esse projeto não possui um sistema de versionamento.
 
